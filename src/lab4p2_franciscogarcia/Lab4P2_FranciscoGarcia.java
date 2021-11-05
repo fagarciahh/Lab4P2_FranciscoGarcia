@@ -30,12 +30,10 @@ public class Lab4P2_FranciscoGarcia {
                         
                     }
                     default ->{
-                        if(){
-                            
-                        }
+                        
                     }
                 } 
-            }catch(miExcepcion e){
+            }catch(Exception e){
                 JOptionPane.showMessageDialog(null, "Opcion no valida");
             }
         }
