@@ -1,5 +1,7 @@
 package lab4p2_franciscogarcia;
 
+import javax.swing.JOptionPane;
+
 public class Capitan extends Soldado{
     
     private Lanzallamas arma;
@@ -21,8 +23,17 @@ public class Capitan extends Soldado{
         this.arma = arma;
     }
     
-    void Ataque(){
-        
+    public void atacar(Soldado soldado){
+        double daño = getArma().getDaño();
+        if(soldado instanceof InfanteriaLigera){
+            daño = daño + daño*0.25;
+        }else if(soldado instanceof InfanteriaPesada){
+            daño = daño + daño*0.20;
+        }else if(soldado instanceof Sargento){
+            daño = daño + daño*0.15;
+        }
+        soldado.setPeleas(soldado.getVida() - daño);
+        JOptionPane.showMessageDialog(null,"");
     }
     
 }

@@ -1,5 +1,7 @@
 package lab4p2_franciscogarcia;
 
+import javax.swing.JOptionPane;
+
 public class Sargento extends Soldado{
     
     private Escopeta arma;
@@ -20,4 +22,14 @@ public class Sargento extends Soldado{
         this.arma = arma;
     }
     
+    public void atacar(Soldado soldado){
+        double daño = getArma().getDaño();
+        if(soldado instanceof InfanteriaLigera){
+            daño = daño + daño*0.15;
+        }else if(soldado instanceof InfanteriaPesada){
+            daño = daño + daño*0.10;
+        }
+        soldado.setPeleas(soldado.getVida() - daño);
+        JOptionPane.showMessageDialog(null,"");
+    }
 }

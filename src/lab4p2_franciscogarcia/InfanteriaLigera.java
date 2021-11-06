@@ -1,5 +1,7 @@
 package lab4p2_franciscogarcia;
 
+import javax.swing.JOptionPane;
+
 public class InfanteriaLigera extends Soldado{
     
     private ArmaBlanca arma;
@@ -20,4 +22,9 @@ public class InfanteriaLigera extends Soldado{
         this.arma = arma;
     }   
         
+    public void atacar(Soldado soldado){
+        double daño = getArma().getDaño();
+        soldado.setPeleas(soldado.getVida() - daño);
+        JOptionPane.showMessageDialog(null,"");
+    }
 }

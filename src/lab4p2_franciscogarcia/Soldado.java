@@ -1,18 +1,18 @@
 package lab4p2_franciscogarcia;
 
 
-public abstract class Soldado {
+public class Soldado {
     
     protected String nombre;
     protected int edad;
     protected int años;
     protected String rango;
-    protected int vida;
+    protected double vida;
 
     public Soldado() {
     }
 
-    public Soldado(String nombre, int edad, int años, String rango, int vida) throws miExcepcion{
+    public Soldado(String nombre, int edad, int años, String rango, double vida) throws miExcepcion{
         this.nombre = nombre;
         this.setEdad(edad);
         this.setAños(años);
@@ -58,14 +58,18 @@ public abstract class Soldado {
         this.rango = rango;
     }
 
-    public int getVida() {
+    public double getVida() {
         return vida;
     }
 
-    public void setVida(int vida)throws miExcepcion {
+    public void setVida(double vida)throws miExcepcion {
         if(vida < 100 || vida > 400){
             throw new miExcepcion("Vida fuera de rango");
         }
+        this.vida = vida;
+    }
+    
+    public void setPeleas(double vida){
         this.vida = vida;
     }
 
@@ -78,6 +82,8 @@ public abstract class Soldado {
                 "Rango: \n" + rango + 
                 "Vida: \n" + vida;
     }
-    
+    public void atacar(){
+        
+    }
     
 }
